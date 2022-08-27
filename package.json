@@ -1,0 +1,19 @@
+{
+  "name": "alumani",
+  "version": "1.0.0",
+  "description": "app for almuni form submit",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/deevanshu-k/alumina.git"
+  },
+  "author": "Deevanshu Kushwah",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deevanshu-k/alumina/issues"
+  },
+  "homepage": "https://github.com/deevanshu-k/alumina#readme"
+}
