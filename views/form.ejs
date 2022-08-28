@@ -24,7 +24,7 @@
     <!-- nav -->
     <%- include('common/header.ejs'); %>
 
-        <div class="bg-light" style="padding-top: 120px;min-height: 100vh;">
+        <div class="bg-light pb-5" style="padding-top: 120px;min-height: 100vh;">
 
             <div class="container bg-white py-3 px-5 d-flex flex-column justify-content-center"
                 style="max-width: 650px;">
@@ -195,8 +195,9 @@
                 </form>
             </div>
         </div>
-        <div id="alert" class="alert alert-danger" role="alert" style="position: fixed;bottom: 20px;right: 30px;display: none;">
-           Server error, try again after some time
+        <div id="alert" class="alert alert-danger" role="alert"
+            style="position: fixed;bottom: 20px;right: 30px;display: none;">
+            Server error, try again after some time
         </div>
         <!-- footer -->
         <%- include('common/footer.ejs'); %>
@@ -244,9 +245,14 @@
             localStorage.setItem('state', 'submitted');
             form.style.display = "none";
             submitted.style.display = '';
+            form.reset();
         }
         else {
             alert.style.display = '';
+            setTimeout(() => {
+                alert.style.display = 'none';
+
+            }, 2000)
         }
         console.log(res);
     });
