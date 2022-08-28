@@ -4,7 +4,9 @@ const bodyparser = require('body-parser');
 const express = require("express");
 const app = express();
 const path = require("path");
-const alumani = require("./models")
+const alumani = require("./models");
+
+const port = process.env.port || 3000;
 
 
 app.use(bodyparser.urlencoded({ extended: false }));
@@ -65,7 +67,7 @@ app.get('**', (req,res) => {
 
 
 
-app.listen(process.env.port,() => {
-    console.log("Server listening on port : ",process.env.port)
+app.listen(port,() => {
+    console.log("Server listening on port : ",port)
 });
 
