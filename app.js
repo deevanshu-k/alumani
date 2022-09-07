@@ -6,7 +6,7 @@ const app = express();
 const path = require("path");
 const alumani = require("./models");
 
-const port = process.env.port || 3000;
+const port = process.env.PORT || 8080;
 
 
 app.use(bodyparser.urlencoded({ extended: false }));
