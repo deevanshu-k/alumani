@@ -16,6 +16,19 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.rtl.min.css"
         integrity="sha384-+4j30LffJ4tgIMrq9CwHvn0NjEvmuDCOfk6Rpg2xg7zgOxWWtLtozDEEVvBPgHqE" crossorigin="anonymous">
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
 
     <title>Alumani form</title>
 </head>
@@ -57,15 +70,15 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-outline">
-                                <input type="number" id="form8Example3" class="form-control my-3" required=""
-                                    name="adm_year" />
+                                <input type="number" minlength="4" maxlength="4" id="form8Example3"
+                                    class="form-control my-3" required="" name="adm_year" />
                                 <label class="form-label" for="form8Example3">Admission year *</label>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-outline">
-                                <input type="number" id="form8Example4" class="form-control my-3" required=""
-                                    name="pout_year" />
+                                <input type="number" minlength="4" maxlength="4" id="form8Example4"
+                                    class="form-control my-3" required="" name="pout_year" />
                                 <label class="form-label" for="form8Example4">Passout year *</label>
                             </div>
                         </div>
@@ -123,7 +136,8 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-outline">
-                                <input type="number" class="form-control my-3" required="" name="mobileno" />
+                                <input type="number" placeholder="+91XXXXX-XXXXX" minlength="10" maxlength="10"
+                                    class="form-control my-3" required="" name="mobileno" />
                                 <label class="form-label">Mobile no *</label>
                             </div>
                         </div>

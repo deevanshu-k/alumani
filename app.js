@@ -60,6 +60,11 @@ app.post('/alumani' ,async (req,res) => {
     
 });
 
+app.get('/alumanis',async (req,res)=>{
+    data = await alumani.findAll({raw :true});
+    res.status(200).json(data);
+})
+
 app.get('**', (req,res) => {
     res.redirect('/alumani');
 });
