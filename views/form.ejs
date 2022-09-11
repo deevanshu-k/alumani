@@ -204,7 +204,7 @@
                     </div>
 
                     <div class="row m-4">
-                        <button type="submit" class="btn btn-primary col" style="width: 200px;">Submit</button>
+                        <button type="submit" id="submitbtn" class="btn btn-primary col" style="width: 200px;">Submit</button>
                     </div>
                 </form>
             </div>
@@ -232,6 +232,8 @@
     }
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
+        let submitbtn = document.getElementById('submitbtn');
+        submitbtn.setAttribute('disabled',true);
         var data = {
             name: form.name.value,
             admissionyear: form.adm_year.value,
@@ -307,6 +309,7 @@
         localStorage.removeItem('state');
         form.style.display = "";
         submitted.style.display = 'none';
+        document.getElementById('submitbtn').removeAttribute('disabled');
     }
 
 </script>
