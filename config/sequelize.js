@@ -10,7 +10,12 @@ const {Sequelize} = require("sequelize");
 //       dialect: process.env.db_dialect
 //     }
 //   );
-const sequelize = new Sequelize(process.env.DATABASE_URL);
+const sequelize = new Sequelize(process.env.DATABASE_URL,{
+   dialect: 'postgres',
+   dialectOptions: {
+       ssl: true
+   }
+});
   
 sequelize.authenticate().then(() => {
     console.log('Connection has been established successfully.');
