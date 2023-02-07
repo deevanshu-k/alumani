@@ -20,11 +20,11 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 
-app.get('/alumani' ,(req,res) => {
+app.get('/alumni' ,(req,res) => {
     res.status(200).render('form.ejs')
 });
 
-app.post('/alumani' ,async (req,res) => {
+app.post('/alumni' ,async (req,res) => {
     try {
         console.log(req.body);
         let data = req.body;
@@ -60,13 +60,13 @@ app.post('/alumani' ,async (req,res) => {
     
 });
 
-app.get('/alumanis',async (req,res)=>{
+app.get('/alumnis',async (req,res)=>{
     data = await alumani.findAll({raw :true});
     res.status(200).json(data);
 })
 
 app.get('**', (req,res) => {
-    res.redirect('/alumani');
+    res.redirect('/alumni');
 });
 
 
