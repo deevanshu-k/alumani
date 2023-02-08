@@ -118,7 +118,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col my-3">
                             <div class="formoutline">
                                 <select class="form-select" aria-label="Default select example"
@@ -144,7 +144,7 @@
                                 </select>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row">
                         <div class="col">
                             <div class="form-outline">
@@ -234,7 +234,7 @@
     let state = localStorage.getItem('state');
     let submitted = document.getElementById('submitted');
     submitted.style.display = 'none';
-    console.log(state);
+    // console.log(state);
     var alert = document.getElementById('alert');
     var form = document.querySelector('#alumani-form');
     if (state == 'submitted') {
@@ -253,8 +253,8 @@
             passoutyear: form.pout_year.value,
             college: form.college.value,
             course: form.course.value,
-            branch: form.branch.value,
-            specilization: form.specialization.value,
+            // branch: form.branch.value,
+            // specilization: form.specialization.value,
             mobileno: form.mobileno.value,
             email: form.email.value,
             facebookid: form.facebookid.value,
@@ -283,9 +283,10 @@
 
             }, 2000)
         }
-        console.log(res);
+        // console.log(res);
     });
 
+    /*
     var course = document.getElementById('course');
     var specialization = document.getElementById('specialization');
     var branch = document.getElementById('branch');
@@ -317,6 +318,7 @@
             console.log('MBA');
         }
     })
+    */
 
     function anotherResponse() {
         localStorage.removeItem('state');

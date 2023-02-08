@@ -40,18 +40,18 @@ const alumaniData = sequelize.define("Alumani",
             defaultValue: ''
 
         },
-        branch: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            defaultValue: ''
+        // branch: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        //     defaultValue: ''
 
-        },
-        specilization: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            defaultValue: ''
+        // },
+        // specilization: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        //     defaultValue: ''
 
-        },
+        // },
         mobileno: {
             type: DataTypes.STRING,
             allowNull: false,
