@@ -76,7 +76,7 @@ const alumaniData = sequelize.define("Alumani",
             defaultValue: ''
 
         },
-        collegename: {
+        companyname: {
             type: DataTypes.STRING,
             allowNull: false,
             defaultValue: ''
