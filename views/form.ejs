@@ -69,6 +69,17 @@
 
                     <div class="row">
                         <div class="col">
+                            <!-- Enrollement No -->
+                            <div class="form-outline">
+                                <input type="text" class="form-control my-3" name="enr_no" required="" />
+                                <label class="form-label">Enrollment no</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
                             <div class="form-outline">
                                 <input type="number" minlength="4" maxlength="4" id="form8Example3"
                                     class="form-control my-3" required="" name="adm_year" />
@@ -91,6 +102,7 @@
                                     <option value="">College Name *</option>
                                     <option value="SDBCE">SDBCE</option>
                                     <option value="SDBCT">SDBCT</option>
+                                    <option value="SDBCT">KCB</option>
                                 </select>
                             </div>
                         </div>
@@ -236,6 +248,7 @@
         submitbtn.setAttribute('disabled',true);
         var data = {
             name: form.name.value,
+            enrollementno: form.enr_no.value,
             admissionyear: form.adm_year.value,
             passoutyear: form.pout_year.value,
             college: form.college.value,
@@ -252,7 +265,7 @@
             permanentaddress: form.permanentaddress.value,
             localaddress: form.localaddress.value
         }
-        let res = await fetch('/alumani', {
+        let res = await fetch('/alumni', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: { 'Content-Type': 'application/json' }

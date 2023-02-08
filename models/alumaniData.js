@@ -11,6 +11,11 @@ const alumaniData = sequelize.define("Alumani",
             allowNull: false,
             defaultValue: ''
         },
+        enrollementno: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            defaultValue: ''
+        },
         admissionyear: {
             type: DataTypes.INTEGER(4),
             allowNull: false,
