@@ -39,7 +39,7 @@
 
         <div class="bg-light pb-5" style="padding-top: 120px;min-height: 100vh;">
 
-            <div class="container bg-white py-3 px-5 d-flex flex-column justify-content-center"
+            <div class="container bg-white py-3 px-4 d-flex flex-column justify-content-center"
                 style="max-width: 650px;">
                 <div class="container-fluid p-3 text-center">
                     <h3 class="mb-3">Alumni Registration Form</h3>
@@ -60,23 +60,34 @@
                         <div class="col">
                             <!-- Name input -->
                             <div class="form-outline">
-                                <input type="text" class="form-control my-3" name="name" required="" />
+                                <input type="text" class="form-control my-4" name="name" required="" />
                                 <label class="form-label">Name *</label>
                             </div>
+                            <!-- Enrollement No -->
+                            <div class="form-outline">
+                                <input type="text" class="form-control my-4" name="enr_no" />
+                                <label class="form-label">Enrollment no</label>
+                            </div>
+                        </div>
+                        <div class="col d-flex flex-column justify-content-center align-items-center">
+                            <!-- Profile Photo -->
+                            <img style="width: 100px; height: 100px;" src="../static/default_profile_photo.webp"
+                                class="img-thumbnail" id="profilePhotoPreview" alt="...">
+                            <input class="form-control form-control-sm" placeholder="hello" id="profilePhoto"
+                                accept="image/*" type="file" style="max-width: 200px;" placeholder=""
+                                name="profilePhoto" onchange="submitProfilePhoto(event)">
                         </div>
 
                     </div>
 
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col">
-                            <!-- Enrollement No -->
                             <div class="form-outline">
                                 <input type="text" class="form-control my-3" name="enr_no"/>
                                 <label class="form-label">Enrollment no</label>
                             </div>
                         </div>
-
-                    </div>
+                    </div> -->
 
                     <div class="row">
                         <div class="col">
@@ -223,7 +234,8 @@
                     </div>
 
                     <div class="row m-4">
-                        <button type="submit" id="submitbtn" class="btn btn-primary col" style="width: 200px;">Submit</button>
+                        <button type="submit" id="submitbtn" class="btn btn-primary col"
+                            style="width: 200px;">Submit</button>
                     </div>
                 </form>
             </div>
@@ -242,6 +254,8 @@
     let submitted = document.getElementById('submitted');
     submitted.style.display = 'none';
     // console.log(state);
+    var profilePhoto = document.getElementById('profilePhoto');
+    var profilePhotoPreview = document.getElementById('profilePhotoPreview');
     var alert = document.getElementById('alert');
     var form = document.querySelector('#alumani-form');
     if (state == 'submitted') {
@@ -252,7 +266,7 @@
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         let submitbtn = document.getElementById('submitbtn');
-        submitbtn.setAttribute('disabled',true);
+        submitbtn.setAttribute('disabled', true);
         var data = {
             name: form.name.value,
             enrollementno: form.enr_no.value,
@@ -278,17 +292,13 @@
             headers: { 'Content-Type': 'application/json' }
         });
         if (res.status == 200) {
-            localStorage.setItem('state', 'submitted');
+            localStorage.setItem('state', 'submitted'); 
             form.style.display = "none";
             submitted.style.display = '';
             form.reset();
         }
         else {
-            alert.style.display = '';
-            setTimeout(() => {
-                alert.style.display = 'none';
-
-            }, 2000)
+            alertBox("Server error, try again after some time");
         }
         // console.log(res);
     });
@@ -327,11 +337,31 @@
     })
     */
 
+    function submitProfilePhoto(event) {
+        // console.log(profilePhoto.value);
+        profilePhotoPreview.src = URL.createObjectURL(event.target.files[0]);
+        let fileSize = event.target.files[0].size;
+        let fileMb = fileSize / 1024 ** 2;
+        if (fileMb > 0.5) {
+            profilePhotoPreview.src = "../static/default_profile_photo.webp";
+            alertBox("select the image with a size up to 500Kb");
+        }
+        // console.log("Image Size : " + fileMb);
+    }
+
     function anotherResponse() {
         localStorage.removeItem('state');
         form.style.display = "";
         submitted.style.display = 'none';
         document.getElementById('submitbtn').removeAttribute('disabled');
+    }
+
+    function alertBox(msg) {
+        alert.innerHTML = msg;
+        alert.style.display = '';
+        setTimeout(() => {
+            alert.style.display = 'none';
+        }, 3000);
     }
 
 </script>
