@@ -60,12 +60,12 @@
                         <div class="col">
                             <!-- Name input -->
                             <div class="form-outline">
-                                <input type="text" class="form-control my-4" name="name" required="" />
+                                <input type="text" class="form-control my-4" name="name" required="" title="Enter your full name" />
                                 <label class="form-label">Name *</label>
                             </div>
                             <!-- Enrollement No -->
                             <div class="form-outline">
-                                <input type="text" class="form-control my-4" name="enr_no" />
+                                <input type="text" class="form-control my-4" name="enr_no" pattern="^\d{4}\w{2,3}\d{6}$" placeholder="0834XX211XXX" title="Enter correct enrollement number" />
                                 <label class="form-label">Enrollment no</label>
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                             <!-- Profile Photo -->
                             <img style="width: 100px; height: 100px;" src="../static/default_profile_photo.webp"
                                 class="img-thumbnail" id="profilePhotoPreview" alt="...">
-                            <input class="form-control form-control-sm" placeholder="hello" id="profilePhoto"
+                            <input class="form-control form-control-sm" placeholder="hello" title="Select profile photo" id="profilePhoto"
                                 accept="image/*" type="file" style="max-width: 200px;" placeholder=""
                                 name="profilePhoto" onchange="submitProfilePhoto(event)">
                         </div>
@@ -92,14 +92,14 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-outline">
-                                <input type="number" minlength="4" maxlength="4" id="form8Example3"
+                                <input type="number" id="adm_year" title="Enter admission year" min="2005" step="1"
                                     class="form-control my-3" required="" name="adm_year" />
                                 <label class="form-label" for="form8Example3">Admission year *</label>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-outline">
-                                <input type="number" minlength="4" maxlength="4" id="form8Example4"
+                                <input type="number" id="pout_year" title="Enter passout year" min="2005"
                                     class="form-control my-3" required="" name="pout_year" />
                                 <label class="form-label" for="form8Example4">Passout year *</label>
                             </div>
@@ -113,7 +113,7 @@
                                     <option value="">College Name *</option>
                                     <option value="SDBCE">SDBCE</option>
                                     <option value="SDBCT">SDBCT</option>
-                                    <option value="KCB">KCB</option>
+                                    <option value="KCBTA">KCBTA</option>
                                 </select>
                             </div>
                         </div>
@@ -122,15 +122,15 @@
                                 <select class="form-select" aria-label="Default select example"
                                     style="color: rgb(119, 119, 124);" required="" name="course" id="course">
                                     <option value="">Course *</option>
-                                    <option value="Btech-CSE">Btech-CSE</option>
-                                    <option value="Btech-IT">Btech-IT</option>
-                                    <option value="Btech-EC">Btech-EC</option>
-                                    <option value="Btech-CE">Btech-CE</option>
-                                    <option value="Btech-ME">Btech-ME</option>
-                                    <option value="Mtech-CSE">Mtech-CSE</option>
-                                    <option value="Mtech-EC">Mtech-EC</option>
-                                    <option value="Mtech-ME">Mtech-ME</option>
-                                    <option value="Mtech-CE">Mtech-CE</option>
+                                    <option value="Btech-CSE">B.Tech-CSE</option>
+                                    <option value="Btech-IT">B.Tech-IT</option>
+                                    <option value="Btech-EC">B.Tech-EC</option>
+                                    <option value="Btech-CE">B.Tech-CE</option>
+                                    <option value="Btech-ME">B.Tech-ME</option>
+                                    <option value="M.E. Structural Engineering">M.E. Structural Engineering</option>
+                                    <option value="M.Tech Computer Science & Engineering">M.Tech Computer Science & Engineering</option>
+                                    <option value="M.Tech Digital Communication">M.Tech Digital Communication</option>
+                                    <option value="M.Tech Thermal System & Design">M.Tech Thermal System & Design</option>
                                     <option value="MBA">MBA</option>
                                 </select>
                             </div>
@@ -166,14 +166,14 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-outline">
-                                <input type="number" placeholder="+91XXXXX-XXXXX" minlength="10" maxlength="10"
+                                <input type="tel" title="Required pattern +91XXXXXXXXXX" pattern="^[+]91(9|8|7)\d{9}$" placeholder="+91XXXXX-XXXXX"
                                     class="form-control my-3" required="" name="mobileno" />
                                 <label class="form-label">Mobile no *</label>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-outline">
-                                <input type="email" class="form-control my-3" required="" name="email" />
+                                <input type="email" title="Enter your email" class="form-control my-3" required="" name="email" />
                                 <label class="form-label">Email *</label>
                             </div>
                         </div>
@@ -256,8 +256,14 @@
     // console.log(state);
     var profilePhoto = document.getElementById('profilePhoto');
     var profilePhotoPreview = document.getElementById('profilePhotoPreview');
+    var pout_year = document.getElementById("pout_year");
+    var adm_year = document.getElementById("adm_year");
     var alert = document.getElementById('alert');
     var form = document.querySelector('#alumani-form');
+
+    pout_year.max = (new Date()).getFullYear();
+    adm_year.max = (new Date()).getFullYear();
+
     if (state == 'submitted') {
         form.style.display = "none";
         submitted.style.display = '';
