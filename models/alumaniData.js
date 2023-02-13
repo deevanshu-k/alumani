@@ -5,7 +5,11 @@ const sequelize = require('../config/sequelize')
 
 const alumaniData = sequelize.define("Alumani",
     {
-
+        uniqueId:{
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique:true
+        },
         name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -17,13 +21,13 @@ const alumaniData = sequelize.define("Alumani",
             defaultValue: ''
         },
         admissionyear: {
-            type: DataTypes.INTEGER(4),
+            type: DataTypes.INTEGER,
             allowNull: false,
             defaultValue: 0
 
         },
         passoutyear: {
-            type: DataTypes.INTEGER(4),
+            type: DataTypes.INTEGER,
             allowNull: false,
             defaultValue: 0
 
