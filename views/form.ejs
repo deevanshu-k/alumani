@@ -51,6 +51,17 @@
                     <h5>Thank You!</h5>
                     <p>The form was submitted successfully.</p>
                     <p>
+                        <h7>Your uniqueId : </h7>
+                        <span class="fw-semibold" id="uniqueIdDisplay">0000XX0000</span>
+                        <span
+                            class="material-symbols-outlined"
+                            style="font-size: 13px;cursor: pointer;"
+                            onclick="copyToClipboard()"
+                            >
+                            content_copy
+                        </span>
+                    </p>
+                    <p>
                         <a class="btn btn-link" onclick="anotherResponse()" style="cursor: pointer;">Submit another
                             response</a>
                     </p>
@@ -75,9 +86,10 @@
                             <!-- Profile Photo -->
                             <img style="width: 100px; height: 100px;" src="../static/default_profile_photo.webp"
                                 class="img-thumbnail" id="profilePhotoPreview" alt="...">
-                            <input class="form-control form-control-sm" required placeholder="hello" title="Select profile photo"
-                                id="profilePhoto" accept="image/*" type="file" style="max-width: 200px;" placeholder=""
-                                name="profilePhoto" onchange="submitProfilePhoto(event)">
+                            <input class="form-control form-control-sm" required placeholder="hello"
+                                title="Select profile photo" id="profilePhoto" accept="image/*" type="file"
+                                style="max-width: 200px;" placeholder="" name="profilePhoto"
+                                onchange="submitProfilePhoto(event)">
                         </div>
 
                     </div>

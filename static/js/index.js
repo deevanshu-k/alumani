@@ -1,5 +1,8 @@
 let state = localStorage.getItem('state');
+let uId = localStorage.getItem('uniqueId');
 let submitted = document.getElementById('submitted');
+let uniqueIdDisplay = document.getElementById('uniqueIdDisplay');
+uniqueIdDisplay.innerText = uId || '0000XX0000';
 submitted.style.display = 'none';
 var profilePhoto = document.getElementById('profilePhoto');
 var profilePhotoPreview = document.getElementById('profilePhotoPreview');
@@ -43,14 +46,18 @@ form.addEventListener('submit', async (e) => {
         let img = await uploadImage(d.data.id);
         if (res.status == 200 && img.status == 200) {
             localStorage.setItem('state', 'submitted');
+            localStorage.setItem('uniqueId', d.data.uniqueId);
             form.style.display = "none";
+            uniqueIdDisplay.innerText = d.data.uniqueId;
             submitted.style.display = '';
             form.reset();
         }
         else if (img.status != 200) {
             alertBox("Not able to upload profile photo");
             localStorage.setItem('state', 'submitted');
+            localStorage.setItem('uniqueId', d.data.uniqueId);
             form.style.display = "none";
+            uniqueIdDisplay.innerText = d.data.uniqueId;
             submitted.style.display = '';
             form.reset();
         } else {
@@ -95,8 +102,16 @@ async function submitProfilePhoto(event) {
 function anotherResponse() {
     localStorage.removeItem('state');
     form.style.display = "";
+    uniqueIdDisplay.innerText = '0000XX0000';
+    localStorage.setItem('uniqueId','0000XX0000')
     submitted.style.display = 'none';
     document.getElementById('submitbtn').removeAttribute('disabled');
+}
+
+function copyToClipboard() {
+    let text = uniqueIdDisplay.innerText;
+    navigator.clipboard.writeText(text);
+    alertBox("Copied the text: " + text);
 }
 
 function alertBox(msg) {

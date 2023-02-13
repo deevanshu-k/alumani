@@ -6,6 +6,8 @@ const multer = require("multer");
 const app = express();
 const path = require("path");
 const alumani = require("./models");
+const {branch} = require('./interfaces/branch');
+const { generateUniqueId } = require("./services/uniqueId.service");
 
 const port = process.env.PORT || 8080;
 
@@ -40,8 +42,8 @@ app.get('/alumni' ,(req,res) => {
 
 app.post('/alumni' ,async (req,res) => {
     try {
-        console.log(req.body);
         let data = req.body;
+        data.uniqueId = await generateUniqueId(data.admissionyear,branch[data.course]);
         alumani.create(data).then((d) => {
             res.status(200).json({
                 data: d,
@@ -63,7 +65,7 @@ app.post('/alumni' ,async (req,res) => {
 
     } catch (error) {
         res.status(501).json({
-            data: d,
+            data: error,
             status: 0,
             error : {
                 message : 'SERVER_ERR'

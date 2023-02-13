@@ -1,6 +1,6 @@
 const alumani = require('./alumaniData');
 
-alumani.sync({force:true}).then(async () => {
+alumani.sync({force:false}).then(async () => {
     console.log('Alumani table created!');
     a = await alumani.findAll();
 }).catch((error) => {
