@@ -14,7 +14,7 @@ const port = process.env.PORT || 8080;
 
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended:true}));
 
 app.use('/static', express.static('static'));
 app.set('view engine', 'ejs');
