@@ -3,7 +3,7 @@ const sequelize = require('../config/sequelize')
 
 
 
-const alumaniData = sequelize.define("Alumani",
+const alumaniData = sequelize.define("Alumni",
     {
         uniqueId:{
             type: DataTypes.STRING,
