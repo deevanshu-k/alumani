@@ -1,4 +1,6 @@
-Task 1:
-Add column to DB for Unique ALUMNI ID.
-Return it to user after form submit.
-Return id - 2019CS0001
+# Alumni Registration Form
+## Technoledgy Used:
+- Nodejs ( **BackEnd** )
+- Express ( **Web application framework** )
+- ejs ( **Template engine** )
+- DataBase ( **MySql / PostgreSQL**)
