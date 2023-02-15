@@ -2,6 +2,7 @@ require('dotenv').config();
 const {Sequelize} = require("sequelize");
 let sequelize;
 
+console.log("ENVIRONMENT : "+process.env.NODE_ENV);
 if(process.env.NODE_ENV == 'production'){
    sequelize = new Sequelize(
       process.env.db_name,
