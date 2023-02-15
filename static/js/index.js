@@ -3,7 +3,6 @@ let uId = localStorage.getItem('uniqueId');
 let submitted = document.getElementById('submitted');
 let uniqueIdDisplay = document.getElementById('uniqueIdDisplay');
 uniqueIdDisplay.innerText = uId || '0000XX0000';
-// submitted.style.display = 'none';
 var profilePhoto = document.getElementById('profilePhoto');
 var profilePhotoPreview = document.getElementById('profilePhotoPreview');
 var pout_year = document.getElementById("pout_year");

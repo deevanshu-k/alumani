@@ -5,7 +5,7 @@ async function generateUniqueId(adYear,branch) {
     data = await alumani.findAll({
         attributes: ['uniqueId']
     });
-    let arr = [];
+    let arr = [1000];
     data.forEach(id => {
         let s = id.uniqueId;
         let m = s.substring(s.length - 4, s.length);
