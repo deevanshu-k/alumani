@@ -11,6 +11,9 @@ var alert = document.getElementById('alert');
 var form = document.querySelector('#alumani-form');
 let submitbtn = document.getElementById('submitbtn');
 let submitbtnspinner = document.getElementById('submitbtnspinner');
+let countrySelect = document.getElementById('countrySelect');
+let stateSelect = document.getElementById('stateSelect');
+let citySelect = document.getElementById('citySelect');
 
 pout_year.max = (new Date()).getFullYear();
 adm_year.max = (new Date()).getFullYear();
@@ -42,7 +45,7 @@ form.addEventListener('submit', async (e) => {
         linkedinid: form.linkedinid.value,
         companyname: form.companyname.value,
         designation: form.designation.value,
-        workinglocation: form.workinglocation.value,
+        workinglocation: form.country.value+','+form.state.value+','+form.city.value,
         permanentaddress: form.permanentaddress.value,
         localaddress: form.localaddress.value
     }
@@ -78,7 +81,7 @@ form.addEventListener('submit', async (e) => {
 async function uploadImage(Id) {
     const ImageData = new FormData();
     ImageData.append('file', profilePhoto.files[0]);
-    let img = await fetch('/uploadImage', {
+    let img = await fetch('/alumni/uploadImage', {
         method: 'POST',
         body: ImageData,
         headers: {
@@ -86,6 +89,55 @@ async function uploadImage(Id) {
         }
     });
     return img;
+}
+
+async function fetchState() {
+    let option = document.createElement("option");
+    option.innerText = 'State *';
+    option.value = "";
+    stateSelect.replaceChildren(option);
+
+    let option2 = document.createElement("option");
+    option2.innerText = 'City *';
+    option2.value = "";
+    citySelect.replaceChildren(option2);
+    let res = await fetch('/v1/api/states/' + countrySelect.value, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+    });
+    res.json().then(d => {
+        d.forEach(s => {
+            let option = document.createElement("option");
+            option.innerText = s.name;
+            option.value = s.isoCode;
+            stateSelect.appendChild(option);
+        });
+        console.log(d);
+    }).catch((e) => {
+        alertBox('Server error, try again after some time...')
+    })
+}
+
+async function  fetchCity() {
+    let option = document.createElement("option");
+    option.innerText = 'City *';
+    option.value = "";
+    citySelect.replaceChildren(option);
+    let res = await fetch(`/v1/api/cities/${countrySelect.value}/${stateSelect.value}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+    });
+    res.json().then(d => {
+        d.forEach(c => {
+            let option = document.createElement("option");
+            option.innerText = c;
+            option.value = c;
+            citySelect.appendChild(option);
+        });
+        console.log(d);
+    }).catch((e) => {
+        alertBox('Server error, try again after some time...')
+    })
 }
 
 async function submitForm(data) {

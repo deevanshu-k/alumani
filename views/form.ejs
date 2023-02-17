@@ -53,11 +53,8 @@
                     <p>
                         <h7>Your uniqueId : </h7>
                         <span class="fw-semibold" id="uniqueIdDisplay">0000XX0000</span>
-                        <span
-                            class="material-symbols-outlined"
-                            style="font-size: 15px;cursor: pointer;"
-                            onclick="copyToClipboard()"
-                            >
+                        <span class="material-symbols-outlined" style="font-size: 15px;cursor: pointer;"
+                            onclick="copyToClipboard()">
                             content_copy
                         </span>
                     </p>
@@ -117,7 +114,7 @@
                                     <option value="">College Name *</option>
                                     <option value="SDBCE">SDBCE</option>
                                     <option value="SDBCT">SDBCT</option>
-                                    <option value="KCBTA">KCBTA</option>
+                                    <option value="KCBTA">SDBCE (KCBTA)</option>
                                 </select>
                             </div>
                         </div>
@@ -189,14 +186,41 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" class="form-control my-3" required="" name="workinglocation">
-                                <label class="form-label">Working Location *</label>
+
+                    <div class="row d-flex flex-row justify-content-center border rounded mx-1 py-3">
+                        <div class="row py-2 px-3" style="font-weight: 400;color: rgba(86, 86, 86, 0.789);">Working Location *</div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="formoutline">
+                                    <select class="form-select" aria-label="Default select example"
+                                        style="color: rgb(119, 119, 124);" required="" id="countrySelect" name="country" onchange="fetchState()">
+                                        <option value="">Country *</option>
+                                        <% for(var i=0; i < countries.length; i++) { %>
+                                            <option value='<%= countries[i].isoCode %>'><%= countries[i].name %></option>
+                                        <%}%>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="formoutline">
+                                    <select class="form-select" aria-label="Default select example"
+                                        style="color: rgb(119, 119, 124);" id="stateSelect" required="" name="state" onchange="fetchCity()">
+                                        <option value="">State *</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="formoutline">
+                                <select class="form-select" aria-label="Default select example"
+                                    style="color: rgb(119, 119, 124);" id="citySelect" required="" name="city">
+                                    <option value="">City *</option>
+                                </select>
                             </div>
                         </div>
                     </div>
+                    
+
                     <div class="row">
                         <div class="col">
                             <div class="form-outline">
@@ -215,9 +239,9 @@
                     </div>
 
                     <div class="row m-4">
-                        <button type="submit" id="submitbtn" class="btn btn-primary col"
-                            style="width: 200px;">
-                            <span id="submitbtnspinner" style="display: none;" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        <button type="submit" id="submitbtn" class="btn btn-primary col" style="width: 200px;">
+                            <span id="submitbtnspinner" style="display: none;" class="spinner-border spinner-border-sm"
+                                role="status" aria-hidden="true"></span>
                             Submit</button>
                     </div>
                 </form>
