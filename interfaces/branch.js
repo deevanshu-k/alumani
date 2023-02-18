@@ -4,6 +4,7 @@ module.exports.branch = {
     "Btech-EC":"EC",
     "Btech-CE":"CE",
     "Btech-ME":"ME",
+    "MCA":"MCA",
     "M.E. Structural Engineering":"MCE",
     "M.Tech Computer Science & Engineering":"MCS",
     "M.Tech Digital Communication":"MEC",
