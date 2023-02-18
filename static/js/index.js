@@ -101,21 +101,23 @@ async function fetchState() {
     option2.innerText = 'City *';
     option2.value = "";
     citySelect.replaceChildren(option2);
-    let res = await fetch('/v1/api/states/' + countrySelect.value, {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' }
-    });
-    res.json().then(d => {
-        d.forEach(s => {
-            let option = document.createElement("option");
-            option.innerText = s.name;
-            option.value = s.isoCode;
-            stateSelect.appendChild(option);
+    if(countrySelect.value != ''){
+        let res = await fetch('/v1/api/states/' + countrySelect.value, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
         });
-        console.log(d);
-    }).catch((e) => {
-        alertBox('Server error, try again after some time...')
-    })
+        res.json().then(d => {
+            d.forEach(s => {
+                let option = document.createElement("option");
+                option.innerText = s.name;
+                option.value = s.isoCode;
+                stateSelect.appendChild(option);
+            });
+            console.log(d);
+        }).catch((e) => {
+            alertBox('Server error, try again after some time...')
+        })
+    }
 }
 
 async function  fetchCity() {
@@ -123,21 +125,23 @@ async function  fetchCity() {
     option.innerText = 'City *';
     option.value = "";
     citySelect.replaceChildren(option);
-    let res = await fetch(`/v1/api/cities/${countrySelect.value}/${stateSelect.value}`, {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' }
-    });
-    res.json().then(d => {
-        d.forEach(c => {
-            let option = document.createElement("option");
-            option.innerText = c;
-            option.value = c;
-            citySelect.appendChild(option);
+    if(countrySelect.value != '' || stateSelect.value != ''){
+        let res = await fetch(`/v1/api/cities/${countrySelect.value}/${stateSelect.value}`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
         });
-        console.log(d);
-    }).catch((e) => {
-        alertBox('Server error, try again after some time...')
-    })
+        res.json().then(d => {
+            d.forEach(c => {
+                let option = document.createElement("option");
+                option.innerText = c;
+                option.value = c;
+                citySelect.appendChild(option);
+            });
+            console.log(d);
+        }).catch((e) => {
+            alertBox('Server error, try again after some time...')
+        })
+    }
 }
 
 async function submitForm(data) {
