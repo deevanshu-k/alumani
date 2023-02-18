@@ -125,7 +125,7 @@ async function  fetchCity() {
     option.innerText = 'City *';
     option.value = "";
     citySelect.replaceChildren(option);
-    if(countrySelect.value != '' || stateSelect.value != ''){
+    if(countrySelect.value != '' && stateSelect.value != ''){
         let res = await fetch(`/v1/api/cities/${countrySelect.value}/${stateSelect.value}`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
