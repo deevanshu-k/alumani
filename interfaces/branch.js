@@ -1,7 +1,7 @@
 module.exports.branch = {
-    "Btech-CSE":"CS",
+    "Btech-CSE":"CSE",
     "Btech-IT":"IT",
-    "Btech-EC":"EC",
+    "Btech-ECE":"ECE",
     "Btech-CE":"CE",
     "Btech-ME":"ME",
     "MCA":"MCA",
