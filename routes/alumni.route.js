@@ -20,9 +20,29 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 router.get('' ,(req,res) => {
+    // let countries = getAllCountries();
+    // res.status(200).render('main.ejs',{countries})
+    res.status(200).render('main.ejs')
+});
+router.get('/rgform' ,(req,res) => {
     let countries = getAllCountries();
     res.status(200).render('form.ejs',{countries})
 });
+router.get('/about', (req,res) =>{
+    res.status(200).render('vission.ejs')
+});
+router.get('/president', (req,res) =>{
+    res.status(200).render('president.ejs')
+})
+router.get('/spotlight', (req,res) =>{
+    res.status(200).render('alumnispotlight.ejs')
+})
+router.get('/association', (req,res) =>{
+    res.status(200).render('association_profile.ejs')
+})
+router.get('/contact', (req,res) =>{
+    res.status(200).render('contact.ejs')
+})
 
 router.post('' ,async (req,res) => {
     try {

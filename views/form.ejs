@@ -33,11 +33,21 @@
     <title>Alumni form</title>
 </head>
 
-<body>
+<body style="padding-top: 75px;">
     <!-- nav -->
     <%- include('common/header.ejs'); %>
+    <div class="p-4 p-md-5 my-7 rounded d-flex align-items-center justify-content-center"
+            style="background-color: #f6f2ed;">
+            <div class="col-md-6 px-0 d-flex flex-column align-items-center justify-content-center"
+                style="width: 100% ;">
+                <h1 class="heading  fw-bold text-center ">Registration For Alumni Of SDBC-BGI Indore</h1>
+                <a href="https://sdbc.ac.in/">
+                    <h3 class="text-md-center text-black">Be a Part of SDBC-BGI Family </h3>
+                </a>
+            </div>
+        </div>
 
-        <div class="bg-light pb-5" style="padding-top: 120px;min-height: 100vh;">
+        <div class="bg-light py-5" style="min-height: 100vh;">
 
             <div class="container bg-white py-3 px-4 d-flex flex-column justify-content-center"
                 style="max-width: 650px;">
@@ -188,23 +198,28 @@
                     </div>
 
                     <div class="row d-flex flex-row justify-content-center border rounded mx-1 py-3">
-                        <div class="row py-2 px-3" style="font-weight: 400;color: rgba(86, 86, 86, 0.789);">Working Location *</div>
+                        <div class="row py-2 px-3" style="font-weight: 400;color: rgba(86, 86, 86, 0.789);">Working
+                            Location *</div>
                         <div class="row">
                             <div class="col">
                                 <div class="formoutline">
                                     <select class="form-select" aria-label="Default select example"
-                                        style="color: rgb(119, 119, 124);" required="" id="countrySelect" name="country" onchange="fetchState()">
+                                        style="color: rgb(119, 119, 124);" required="" id="countrySelect" name="country"
+                                        onchange="fetchState()">
                                         <option value="">Country *</option>
                                         <% for(var i=0; i < countries.length; i++) { %>
-                                            <option value='<%= countries[i].isoCode %>'><%= countries[i].name %></option>
-                                        <%}%>
+                                            <option value='<%= countries[i].isoCode %>'>
+                                                <%= countries[i].name %>
+                                            </option>
+                                            <%}%>
                                     </select>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="formoutline">
                                     <select class="form-select" aria-label="Default select example"
-                                        style="color: rgb(119, 119, 124);" id="stateSelect" required="" name="state" onchange="fetchCity()">
+                                        style="color: rgb(119, 119, 124);" id="stateSelect" required="" name="state"
+                                        onchange="fetchCity()">
                                         <option value="">State *</option>
                                     </select>
                                 </div>
@@ -219,7 +234,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
 
                     <div class="row">
                         <div class="col">

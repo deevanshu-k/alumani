@@ -1,12 +1,139 @@
 <header>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white" style="position: fixed;top: 0px;width: 100vw;z-index: 100;">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-white"
+        style="position: fixed;top: 0px;width: 100vw;z-index: 100;">
         <div class="container-fluid">
             <a class="navbar-brand me-2" href="https://sdbc.ac.in/">
                 <img src="../static/bansal_logo.png" height="50" alt="MDB Logo" loading="lazy"
                     style="margin-top: -1px;" />
             </a>
         </div>
+        <ul class=" jk d-flex col-12 col-md-auto  justify-content-center mb-md-0"
+            style="color: #000; text-decoration: none; list-style-type: none; font-size:15px;">
+            <li class="nav-item active nav-hover">
+                <a class="nav-link " href="/alumni">Home</a>
+            </li>
+            <li class="nav-item dropdown nav-hover">
+                <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">About Us</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item fw-bold" href="/alumni/about">Mission-Vission</a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item fw-bold" href="/alumni/president">President Message</a></li>
+                </ul>
+            </li>
+            <li class="nav-item  nav-hover">
+                <a class="nav-link " href="/alumni/spotlight" role="button" aria-expanded="false">Alumni
+                    Spotlight</a>
+
+            </li>
+            <li class="nav-item  nav-hover">
+                <a class="nav-link " href="/alumni/rgform" role="button" aria-expanded="false">Registration</a>
+            </li>
+            <li class="nav-item nav-hover dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">News & Events</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item fw-bold"
+                            href="/static/pdf/Newsletter-Jan-2022.pdf">Newsletter-Jan-2022</a>
+                    </li>
+                    <li><a class="dropdown-item fw-bold" href="/static/pdf/July-2022-Vol-2.pdf">July-2022-Vol-2</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item nav-hover dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">Alumni Association</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item fw-bold" href="/alumni/association">Alumni
+                            Council
+                            Executive Committee
+                        </a></li>
+                </ul>
+            </li>
+            <li class="nav-item  nav-hover">
+                <a class="nav-link " href="/alumni/contact">Contact Us</a>
+            </li>
+        </ul>
+    </nav> -->
+    <!-- Navbar -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"
+        style="position: fixed;top: 0px;width: 100vw;z-index: 100;">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand me-2" href="/alumni">
+                <img src="../static/bansal_logo.png" height="50" alt="Bansal Logo" loading="lazy"
+                    style="margin-top: -1px;" />
+            </a>
+
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarButtonsExample" aria-controls="navbarButtonsExample" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarButtonsExample">
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item px-3">
+                        <a class="nav-link fw-medium" href="/alumni">Home</a>
+                    </li>
+                    <li class="px-3 dropdown" style="cursor: pointer;">
+                        <a 
+                        class="nav-link fw-medium dropdown-toggle" 
+                        id="dropdownMenuButton" 
+                        data-mdb-toggle="dropdown"
+                        aria-expanded="false"
+                        >About Us</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item text-center" href="/alumni/about">Mission-Vission</a></li>
+                            <li><a class="dropdown-item text-center" href="/alumni/president">President Message</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link fw-medium" href="/alumni/spotlight">Spotlight</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link fw-medium" href="/alumni/rgform">Registration</a>
+                    </li>
+                    <li class="nav-item px-3 dropdown pe-auto" style="cursor: pointer;">
+                        <a class="nav-link fw-medium dropdown-toggle" id="dropdownMenuButton" data-mdb-toggle="dropdown"
+                            aria-expanded="false">News & Events</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item text-center" href="/static/pdf/Newsletter-Jan-2022.pdf">Newsletter-Jan-2022</a></li>
+                            <li><a class="dropdown-item text-center" href="/static/pdf/July-2022-Vol-2.pdf">Newsletter-July-2022</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item px-3 dropdown pe-auto" style="cursor: pointer;">
+                        <a class="nav-link fw-medium dropdown-toggle" id="dropdownMenuButton" data-mdb-toggle="dropdown"
+                            aria-expanded="false">Alumni Association</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item text-center" href="/alumni/association">Council Executive Committee</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link fw-medium" href="/alumni/contact">Contact Us</a>
+                    </li>
+                </ul>
+                <!-- Left links -->
+
+                <div class="d-flex align-items-center">
+                    <a class="navbar-brand me-2" href="https://mdbgo.com/">
+                        <img src="../static/excellenceineducation.png" height="50" alt="Bansal Logo" loading="lazy"
+                            style="margin-top: -1px;" />
+                    </a>
+                </div>
+            </div>
+            <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
     </nav>
     <!-- Navbar -->
 </header>
