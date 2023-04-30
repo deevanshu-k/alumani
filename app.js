@@ -14,6 +14,7 @@ app.use(bodyparser.json());
 app.use(express.urlencoded({extended:true}));
 
 app.use('/static', express.static('static'));
+app.use('/alimage', express.static('uploads'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
