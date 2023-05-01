@@ -14,6 +14,7 @@ let submitbtnspinner = document.getElementById('submitbtnspinner');
 let countrySelect = document.getElementById('countrySelect');
 let stateSelect = document.getElementById('stateSelect');
 let citySelect = document.getElementById('citySelect');
+let textAreaMsg = document.getElementById('textAreaMsg');
 
 pout_year.max = (new Date()).getFullYear();
 adm_year.max = (new Date()).getFullYear();
@@ -47,7 +48,8 @@ form.addEventListener('submit', async (e) => {
         designation: form.designation.value,
         workinglocation: form.country.value+','+form.state.value+','+form.city.value,
         permanentaddress: form.permanentaddress.value,
-        localaddress: form.localaddress.value
+        localaddress: form.localaddress.value,
+        msg: form.textAreaMsg.value
     }
     let res = await submitForm(data);
     res.json().then(async (d) => {
