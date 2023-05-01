@@ -22,12 +22,12 @@ var upload = multer({ storage: storage });
 
 router.get('', async (req, res) => {
     try {
-        let data = await alumani.findAll({ 
+        let data = await alumani.findAll({
             raw: true,
             where: {
-                display_for_review:true
+                display_for_review: true
             }
-         });
+        });
         fs.readdir('./uploads/', (err, files) => {
             files.forEach(file => {
                 let id = (file.split("."))[0];
@@ -52,7 +52,7 @@ router.get('/about', (req, res) => {
 });
 router.get('/president', (req, res) => {
     res.status(200).render('president.ejs')
-})
+});
 router.get('/spotlight', async (req, res) => {
     try {
         let data = await alumani.findAll({ raw: true });
@@ -72,13 +72,35 @@ router.get('/spotlight', async (req, res) => {
         let data = await alumani.findAll({ raw: true });
         res.status(200).render('alumnispotlight.ejs', { alumni: data })
     }
-})
+});
 router.get('/association', (req, res) => {
     res.status(200).render('association_profile.ejs')
-})
+});
 router.get('/contact', (req, res) => {
     res.status(200).render('contact.ejs')
-})
+});
+router.get('/detail/:alid', async (req, res) => {
+    try {
+        let data = await alumani.findOne({
+            raw: true,
+            where: {
+                uniqueId: req.params.alid
+            }
+        });
+        fs.readdir('./uploads/', (err, files) => {
+            files.forEach(file => {
+                let id = (file.split("."))[0];
+                if (id == data.id) {
+                    data.img = file;
+                }
+            });
+            res.status(200).render('common/alumnidetail.ejs', { alumni: data });
+        });
+    } catch (error) {
+        console.log(error);
+        res.redirect('/alumni');
+    }
+});
 
 router.post('', async (req, res) => {
     try {

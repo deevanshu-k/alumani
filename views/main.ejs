@@ -116,7 +116,7 @@
                                 <p class="text-center">
                                     <%= alumni[count].designation %> at <%= alumni[count].companyname %>
                                 </p>
-                                <p><a class="btn btn-secondary" href=".//views/vishal_khatri.html">More About
+                                <p><a class="btn btn-secondary" href="http://localhost:3000/alumni/detail/<%= alumni[count].uniqueId %>">More About
                                         &raquo;</a>
                                 </p>
                             </div>
@@ -324,83 +324,7 @@
             <iframe class="my-2" height="640" width="360" src="https://www.youtube.com/embed/Hb0bI7BJqDo?autoplay=1">
             </iframe>
         </div>
-        <div class="container-fluid d-flex flex-column align-items-center">
-            <div class="card mb-3" style="max-width: 700px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="../static/photos/img/Aakash_r2.png" alt="Trendy Pants and Shoes" class="img-fluid" />
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">What Aakash has to Say about BGI..</h5>
-                            <p class="card-text">
-                                My experience of Bansal College was like a roller coaster ride where I had tons of fun
-                                experiences while learning a lot about acadmeics & life .
-                                <br> Thanks to all the professors who made it easy to understand complex topics and
-                                concepts.<br>
-
-                                I also enjoyed the friendly envirnoment where I made friends with other departments and
-                                created many unforgettable memories.
-                            </p>
-                            <p class="card-text">
-                                <small class="text-muted">Last updated 3 mins ago</small>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-3" style="max-width: 700px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="../static/photos/img/vishal_k2.png" alt="Trendy Pants and Shoes" class="img-fluid" />
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">What Vishal has to Say about BGI..</h5>
-                            <p class="card-text">
-                                The College infrastructure and environment is really good. It has all
-                                the
-                                required facilities which students need.
-                                <br> Huge campus for events, vast libraries and labs with all the quality equipments.
-                                Teachers are highly skilled in theory and practical knowledge as well.<br>
-
-                                In placement point of view, it has given many opportunities to all the students.
-                                I was placed in Pune based payment processing company from college just after I
-                                finished my academics in Computer Science.
-                            </p>
-                            <p class="card-text">
-                                <small class="text-muted">Last updated 3 mins ago</small>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-3" style="max-width: 700px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="../static/photos/img/atish_a2.png" alt="Trendy Pants and Shoes"
-                            class="img-fluid" />
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">What Atish Agrawal has to Say about BGI..</h5>
-                            <p class="card-text">
-                                Stop doubting yourself, work hard and make it happen" , this is what Bansal
-                                Institute taught me in 4 years.The conveyance from a 12th standard guy to an Assistant Vise President was not
-                                that easy. But Bansal Institute nourished me to attain the acceleration to reach the
-                                terminal destination.
-                                <br>
-                                Thanks to almighty and my faculties for i have got an opportunity to see the world,
-                                and work for will.Good luck to all students of Bansal Institute.
-                            </p>
-                            <p class="card-text">
-                                <small class="text-muted">Last updated 3 mins ago</small>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    
         <!-- footer -->
         <%- include('common/footer.ejs'); %>
 
