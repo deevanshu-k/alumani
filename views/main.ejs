@@ -9,15 +9,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.108.0">
     <title>AASDBC-BGI Indore</title>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
-
-
-
-
+    
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../static/style.css"> <!-- css link -->
@@ -36,10 +28,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.rtl.min.css"
         integrity="sha384-+4j30LffJ4tgIMrq9CwHvn0NjEvmuDCOfk6Rpg2xg7zgOxWWtLtozDEEVvBPgHqE" crossorigin="anonymous">
+
     <!-- Favicons -->
-
     <meta name="theme-color" content="#712cf9">
-
 
     <!-- Custom styles for this template  -->
     <link href="carousel.css" rel="stylesheet"> <!--  -->
@@ -53,7 +44,7 @@
         <main>
             <!-- slider 2 -->
             <div>
-                <video class="ratio  " style="height: auto; width:100vw;  " muted autoplay loop>
+                <video class="ratio" style="height: auto; width:100vw;" muted controls autoplay loop>
                     <source src="../static/vedio/BGI Bhopal Alumni Meet 2022.mp4" type="video/mp4">
                 </video>
             </div>
@@ -66,18 +57,13 @@
                 <div class="container-fluid">
                     <div class="row featurettes bg-light d-flex justify-content-center align-items-center py-5">
                         <div class="col-md-7 order-md-2 placeholder-wave">
-                            <h1 class="featurette-heading text-center fw-bold" data-aos="fade">About us
+                            <h1 class="featurette-heading text-center fw-bold">About us
                             </h1>
                             <p class=" placeholder-glow pla"
-                                style="font-family: 'Courier New', Courier, monospace; font-weight: bold;"
-                                data-aos="fade">Alumni refers
-                                to
-                                individuals who have graduated from a particular institution or program. This can
-                                include
-                                schools, colleges, universities, and other educational or professional organizations.
-
-                                Alumni often maintain a connection to their alma mater or program, whether through
-                                ongoing
+                                style=" font-weight: bold;"
+                                >Alumni refers to individuals who have graduated from a particular institution or program. This can
+                                include schools, colleges, universities, and other educational or professional organizations.
+                                Alumni often maintain a connection to their alma mater or program, whether through ongoing
                                 involvement in events and activities, financial contributions, or networking with other
                                 graduates. Many institutions have dedicated alumni associations or organizations that
                                 facilitate these connections and provide resources and support to alumni.
@@ -96,8 +82,8 @@
 
             <!-- Wrap the rest of the page in another container to center all the content. -->
             <!-- alumni spolight -->
-            <div class="container-fluid marketing my-5 bg-light" data-aos="fade">
-                <h1 class="text text-center p-4 my-5" data-aos="fade">ALUMNI OF SDBC-BGI INDORE</h1>
+            <div class="container-fluid marketing py-5 bg-light" data-aos="fade">
+                <h1 class="text text-center p-4 py-5" data-aos="fade">ALUMNI OF SDBC-BGI INDORE</h1>
 
                 <!-- Three columns of text below the carousel -->
                 <div class="test" data-aos="fade">
@@ -116,7 +102,7 @@
                                 <p class="text-center">
                                     <%= alumni[count].designation %> at <%= alumni[count].companyname %>
                                 </p>
-                                <p><a class="btn btn-secondary" href="http://localhost:3000/alumni/detail/<%= alumni[count].uniqueId %>">More About
+                                <p><a class="btn btn-primary" href="http://localhost:3000/alumni/detail/<%= alumni[count].uniqueId %>">More About
                                         &raquo;</a>
                                 </p>
                             </div>
@@ -126,11 +112,6 @@
 
 
             </div>
-            <!-- 
-        <div class="ratio " style="height: 650px;width:100vw;">
-            <iframe src="https://www.youtube.com/embed/M4Eif-cmjPg?autoplay=1" title="YouTube video" allowfullscreen></iframe>
-          </div> -->
-
             <!-- table -->
             <div data-aos="fade" class="container-fluid p-4   table-responsive" style="overflow-x:auto;">
                 <h1 class="text-center py-4 mb-0 bg-light-subtle">ALUMNI ASSOCIATION OF SUSHILA DEVI BANSAL COLLEGE
@@ -274,7 +255,7 @@
                                 @twitter
                             </td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <th scope="row">8</th>
                             <td style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Ms.
                                 Kritika
@@ -290,7 +271,7 @@
                             <td style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
                                 @twitter
                             </td>
-                        </tr>
+                        </tr> -->
                     </tbody>
 
                 </table>
@@ -328,13 +309,7 @@
         <!-- footer -->
         <%- include('common/footer.ejs'); %>
 
-            <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script> -->
-
-
             <!-- animation js link -->
-
             <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
             <script>
                 AOS.init({
