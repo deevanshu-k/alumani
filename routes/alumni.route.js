@@ -65,12 +65,12 @@ router.get('/spotlight', async (req, res) => {
                 }
             });
             console.log(data);
-            res.status(200).render('alumnispotlight.ejs', { alumni: data })
+            res.status(200).render('alumnispotlight.ejs', { alumni: data,totalal:data.length })
         });
 
     } catch (error) {
         let data = await alumani.findAll({ raw: true });
-        res.status(200).render('alumnispotlight.ejs', { alumni: data })
+        res.status(200).render('alumnispotlight.ejs', { alumni: data,totalal:data.length })
     }
 });
 router.get('/association', (req, res) => {
