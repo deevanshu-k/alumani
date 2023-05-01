@@ -109,6 +109,15 @@ const alumaniData = sequelize.define("Alumni",
             allowNull: false,
             defaultValue: ''
 
+        },
+        msg: {
+            type: DataTypes.TEXT('long'),
+            allowNull: true
+        },
+        display_for_review: {
+            type: DataTypes.BOOLEAN,
+            allowNull:false,
+            defaultValue: false
         }
     });
 

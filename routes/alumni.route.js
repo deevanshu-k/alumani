@@ -20,8 +20,28 @@ var storage = multer.diskStorage({
 });
 var upload = multer({ storage: storage });
 
-router.get('', (req, res) => {
-    res.status(200).render('main.ejs')
+router.get('', async (req, res) => {
+    try {
+        let data = await alumani.findAll({ 
+            raw: true,
+            where: {
+                display_for_review:true
+            }
+         });
+        fs.readdir('./uploads/', (err, files) => {
+            files.forEach(file => {
+                let id = (file.split("."))[0];
+                let index = data.indexOf(data.find(e => e.id == id));
+                if (index != -1) {
+                    data[index].img = file;
+                }
+            });
+            res.status(200).render('main.ejs', { alumni: data })
+        });
+    } catch (error) {
+        let data = await alumani.findAll({ raw: true });
+        res.status(200).render('main.ejs', { alumni: data })
+    }
 });
 router.get('/rgform', (req, res) => {
     let countries = getAllCountries();

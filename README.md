@@ -12,3 +12,12 @@
 - Set Port in .env
 - Make uploads folder on root
 - RUN ``npm start``
+
+
+## Tasks
+- Change Model (Add field msg)
+- Add msg to Registration Form
+- Spotlight Page
+- Add no of alumni to spotlight page
+- Add a page to display alumni detail
+- Get Data of alumnis

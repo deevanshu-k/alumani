@@ -14,12 +14,21 @@ if(process.env.NODE_ENV == 'production'){
        }
      );
 }else {
-   sequelize = new Sequelize(process.env.DATABASE_URL,{
-      dialect: 'postgres',
-      dialectOptions: {
-          ssl: true
-      }
-   });
+   // sequelize = new Sequelize(process.env.DATABASE_URL,{
+   //    dialect: 'postgres',
+   //    dialectOptions: {
+   //        ssl: true
+   //    }
+   // });
+   sequelize = new Sequelize(
+      "alumnis",
+      "root",
+      "Deevanshu@125502",
+       {
+         host: "127.0.0.1",
+         dialect: "mysql"
+       }
+     );
 }
   
 sequelize.authenticate().then(() => {
