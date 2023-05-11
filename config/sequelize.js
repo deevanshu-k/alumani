@@ -5,28 +5,24 @@ let sequelize;
 console.log("ENVIRONMENT : "+process.env.NODE_ENV);
 if(process.env.NODE_ENV == 'production'){
    sequelize = new Sequelize(
-      process.env.db_name,
-      process.env.db_username,
-      process.env.db_password,
+      process.env.P_db_name,
+      process.env.P_db_username,
+      process.env.P_db_password,
        {
-         host: process.env.db_host,
-         dialect: process.env.db_dialect
+         host: process.env.P_db_host,
+         dialect: process.env.P_db_dialect,
+         logging: Number(process.env.P_db_logging) ? (d) => { console.log(d); } : false
        }
      );
 }else {
-   // sequelize = new Sequelize(process.env.DATABASE_URL,{
-   //    dialect: 'postgres',
-   //    dialectOptions: {
-   //        ssl: true
-   //    }
-   // });
    sequelize = new Sequelize(
-      "alumnis",
-      "root",
-      "Deevanshu@125502",
+      process.env.D_db_name,
+      process.env.D_db_username,
+      process.env.D_db_password,
        {
-         host: "127.0.0.1",
-         dialect: "mysql"
+         host: process.env.D_db_host,
+         dialect: process.env.D_db_dialect,
+         logging: Number(process.env.D_db_logging) ? (d) => { console.log(d); } : false
        }
      );
 }

@@ -19,7 +19,7 @@ alumani.sync({ force: true }).then(async () => {
     if(!al[0]){
         let a = await alumani.bulkCreate(data);
     }
-    console.log(al);
+    console.log("Initial Data Added");
 }).catch((error) => {
     console.log(error);
 })

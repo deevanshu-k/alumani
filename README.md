@@ -8,16 +8,35 @@
 
 ## For Deploy
 - Set DB config in .env file
-- Set NODE_ENV in .env file (optional)
-- Set Port in .env
+    ```
+    NODE_ENV='production'
+    PORT='3000'
+
+    P_db_name='alumnis'
+    P_db_username='userName'
+    P_db_password='User@12345'
+    P_db_host='127.0.0.1'
+    P_db_dialect='mysql'
+    P_db_logging=1
+    ```
+
 - Make uploads folder on root
 - RUN ``npm start``
 
+## For Development
+- Set DB config in .env file
+    ```
+    NODE_ENV='development'
+    PORT='3000'
 
-## Tasks
-- Change Model (Add field msg)
-- Add msg to Registration Form
-- Spotlight Page
-- Add no of alumni to spotlight page
-- Add a page to display alumni detail
-- Get Data of alumnis
+    D_db_name='alumnis'
+    D_db_username='userName'
+    D_db_password='User@12345'
+    D_db_host='127.0.0.1'
+    D_db_dialect='mysql'
+    D_db_logging=1
+    ```
+
+- Make uploads folder on root
+- RUN ``npm run start:dev``
+
