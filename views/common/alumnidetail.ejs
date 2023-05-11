@@ -47,9 +47,14 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title"><b>Meet.. </b><%= alumni.name %> | <%= alumni.designation %> at <%= alumni.companyname %></h5>
-                    <p class="card-text">Ex-Batch <%= alumni.admissionyear %> <%= alumni.course %> Branch | Bansal Group Of Institution Indore</p>
-                    <p class="card-text"><%= alumni.email %> | <a href="<%= alumni.facebookid %>">Facebook</a> | <a href="<%= alumni.linkedinid %>">Linkedin</a></p>
-
+                    <p class="card-text">Ex-Batch <%= alumni.admissionyear==1111?"":alumni.admissionyear %> <%= alumni.course %> | Bansal Group Of Institution Indore</p>
+                    <p class="card-text">
+                        <a href="mailto:<%= alumni.email %>"><%= (alumni.email && "NA" != alumni.email)?"Email":"" %></a>
+                        <%= ((alumni.email && alumni.email != "NA") && (alumni.linkedinid && alumni.linkedinid != "NA") && !(alumni.facebookid && "NA" != alumni.facebookid))? " | ":"" %>
+                        <%= ((alumni.facebookid && alumni.facebookid != "NA") && (alumni.email && alumni.email != "NA"))? " | ":"" %>
+                        <a href="mailto:<%= alumni.facebookid %>"><%= (alumni.facebookid && "NA" != alumni.facebookid)?"Facebook":"" %></a>
+                        <%= ((alumni.facebookid && alumni.facebookid != "NA") && (alumni.linkedinid && alumni.linkedinid != "NA"))? " | ":"" %>
+                        <a href="mailto:<%= alumni.linkedinid %>"><%= (alumni.linkedinid && "NA" != alumni.linkedinid)?"Linkedin":"" %></a>
                     <div class="card my-4" style="max-width: 700px;">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -58,7 +63,7 @@
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title">What <%= alumni.name %> has to Say about BGI..</h5>
-                                    <p class="card-text">
+                                    <p class="card-text" style="text-align: justify;">
                                         <%= alumni.msg %>
                                     </p>
                                     <p class="card-text">

@@ -36,7 +36,7 @@
 </head>
 
 <body style="padding-top: 75px;">
-  <span class="position-fixed bg-white px-1 border rounded" style="top: 80px;z-index: 100;right: 8px;">Total : <%= totalal %></span>
+  <span class="position-fixed bg-white px-3 py-1 fs-5 border rounded" style="top: 80px;z-index: 100;right: 8px;">Total : <span class="fw-bold"><%= totalal %></span></span>
   <%- include('common/header.ejs'); %>
 
     <div class="p-4 p-md-5 mb-4 my-6 d-flex align-items-center justify-content-center"
@@ -65,13 +65,19 @@
                   <%= alumni[count].designation %>
                 </h5>
                 <p class="card-text text-center">
-                  Social Media : 
-                  <a href="<%= alumni[count].facebookid %>">Facebook</a> | <a
-                    href="<%= alumni[count].linkedinid %>">Linkedin</a>
+                  <%= ((alumni[count].facebookid && alumni[count].facebookid != "NA") || (alumni[count].linkedinid && alumni[count].linkedinid != "NA"))? "Social Media : ":"" %>
+                  <% if(alumni[count].facebookid && alumni[count].facebookid != "NA"){ %>
+                  <a href="<%= alumni[count].facebookid %>">Facebook</a>
+                  <% } %>
+ 
+                  <%= ((alumni[count].facebookid && alumni[count].facebookid != "NA") && (alumni[count].linkedinid && alumni[count].linkedinid != "NA"))? " | ":"" %>
+                  
+                  <% if(alumni[count].linkedinid && alumni[count].linkedinid != "NA"){ %>
+                  <a href="<%= alumni[count].linkedinid %>">Linkedin</a>
+                  <% } %>
                 </p>
                 <p class="card-text text-center">
-                  Email : 
-                  <%= alumni[count].email %>
+                  <%= (alumni[count].email != "NA" && alumni[count].email)?"Email : "+alumni[count].email:"" %>
                 </p>
                 <p class="text-center"><a class="btn btn-primary" style="width: 100%;"
                     href="/alumni/detail/<%= alumni[count].uniqueId %>">More About

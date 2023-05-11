@@ -87,15 +87,20 @@ router.get('/detail/:alid', async (req, res) => {
                 uniqueId: req.params.alid
             }
         });
-        fs.readdir('./uploads/', (err, files) => {
-            files.forEach(file => {
-                let id = (file.split("."))[0];
-                if (id == data.id) {
-                    data.img = file;
-                }
+        if(data){
+            fs.readdir('./uploads/', (err, files) => {
+                files.forEach(file => {
+                    let id = (file.split("."))[0];
+                    if (id == data.id) {
+                        data.img = file;
+                    }
+                });
+                res.status(200).render('common/alumnidetail.ejs', { alumni: data });
             });
-            res.status(200).render('common/alumnidetail.ejs', { alumni: data });
-        });
+        }
+        else {
+            throw new Error("Wrong id passed.");
+        }
     } catch (error) {
         console.log(error);
         res.redirect('/alumni');

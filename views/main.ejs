@@ -60,7 +60,7 @@
                             <h1 class="featurette-heading text-center fw-bold">About us
                             </h1>
                             <p class=" placeholder-glow pla"
-                                style=" font-weight: bold;"
+                                style=" font-weight: bold;text-align: justify;"
                                 >Alumni refers to individuals who have graduated from a particular institution or program. This can
                                 include schools, colleges, universities, and other educational or professional organizations.
                                 Alumni often maintain a connection to their alma mater or program, whether through ongoing
@@ -90,7 +90,7 @@
                     <div class="row py-3 d-flex align-items-center justify-content-center" id="images">
                         
                         <% for(let count=0; count < alumni.length; count++ ){ %>
-                            <div class="col-lg-4 px-4 d-flex flex-column align-items-center justify-content-center"
+                            <div class="col-lg-4 my-5 px-4 d-flex flex-column align-items-center justify-content-center"
                                 data-aos="fade">
                                 <img class="bd-placeholder-img rounded-circle" width="140" height="140" role="img"
                                     aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice"
@@ -102,7 +102,7 @@
                                 <p class="text-center">
                                     <%= alumni[count].designation %> at <%= alumni[count].companyname %>
                                 </p>
-                                <p><a class="btn btn-primary" href="http://localhost:3000/alumni/detail/<%= alumni[count].uniqueId %>">More About
+                                <p><a class="btn btn-primary" href="/alumni/detail/<%= alumni[count].uniqueId %>">More About
                                         &raquo;</a>
                                 </p>
                             </div>
@@ -241,37 +241,18 @@
 
                         <tr>
                             <th scope="row">7</th>
-                            <td style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Ms.
-                                Jaini
-                                Kashyap</td>
-                            <td style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Zensar
+                            <td style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Ms. Ankita Chouhan</td>
+                            <td style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Assistant Professer
                             </td>
                             <td style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Member
                             </td>
                             <td style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-                                8959098464
+                                7067220177
                             </td>
                             <td style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-                                @twitter
+                                ankit.chouhan@sdbc.ac.in
                             </td>
                         </tr>
-                        <!-- <tr>
-                            <th scope="row">8</th>
-                            <td style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Ms.
-                                Kritika
-                                Joshi</td>
-                            <td style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">TCS,
-                                Indore
-                            </td>
-                            <td style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Member
-                            </td>
-                            <td style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-                                8982202831
-                            </td>
-                            <td style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-                                @twitter
-                            </td>
-                        </tr> -->
                     </tbody>
 
                 </table>
@@ -283,9 +264,9 @@
         <div class="container-fluid" data-aos="fade">
             <div class="row featurettes bg-light d-flex justify-content-center align-items-center py-5">
                 <div class="col-md-7 order-md-2 placeholder-wave">
-                    <h2 class="featurette-heading  ">Dr. Premanand Singh Chauhan
+                    <h2 class="featurette-heading  py-5">Dr. Premanand Singh Chauhan
                     </h2>
-                    <p class=" placeholder-glow" style="font-family: 'Courier New', Courier, monospace;">It gives us
+                    <p class=" placeholder-glow fw-bold">It gives us
                         immense pleasure to honor Dr. Chauhan. <br> He is an
                         enthusiast, a
                         Philomath, an idealist and a versatile performer.<br>A highly qualified educationist
