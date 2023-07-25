@@ -47,7 +47,7 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title"><b>Meet.. </b><%= alumni.name %> | <%= alumni.designation %> at <%= alumni.companyname %></h5>
-                    <p class="card-text">Ex-Batch <%= alumni.admissionyear==1111?"":alumni.admissionyear %> <%= alumni.course %> | Bansal Group Of Institution Indore</p>
+                    <p class="card-text"><%= alumni.admissionyear==1111?"":"Batch "+alumni.admissionyear+"-"+(alumni.course.includes("Btech")?alumni.admissionyear+4:alumni.admissionyear+2) %> <%= alumni.course %><%= (alumni.course || alumni.admissionyear!=1111)?" | ":"" %>Bansal Group Of Institution Indore</p>
                     <p class="card-text">
                         <a href="mailto:<%= alumni.email %>"><%= (alumni.email && "NA" != alumni.email)?"Email":"" %></a>
                         <%= ((alumni.email && alumni.email != "NA") && (alumni.linkedinid && alumni.linkedinid != "NA") && !(alumni.facebookid && "NA" != alumni.facebookid))? " | ":"" %>
