@@ -53,10 +53,9 @@
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <% for(let count=0; count < alumni.length; count++ ){ %>
           <div class="col">
-            <div class="card">
-              <img src="/alimage/<%= alumni[count].img %>"
-                onerror=" this.src='https://ui-avatars.com/api/?name=<%= alumni[count].name %>' " height="300"
-                class="card-img-top" alt="...">
+            <div class="card m-4" style="border: 0px;box-shadow: none;">
+              <img src="/alimage/<%= alumni[count].img %>" onerror=" this.src='https://ui-avatars.com/api/?name=<%= alumni[count].name %>' "
+                class="card-img-top bd-placeholder-img rounded-circle" style="aspect-ratio: 1 / 1;" alt="...">
               <div class="card-body">
                 <h5 class="card-title text-center">
                   <%= alumni[count].name %>
