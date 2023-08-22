@@ -23,7 +23,7 @@
 - Make uploads folder on root
 - Unzip uploads_photos.zip to uploads
 - RUN ``npm start``
-
+**NOTE: Tables created automatically**
 ## For Development
 - Set DB config in .env file
     ```
