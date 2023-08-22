@@ -21,6 +21,7 @@
     ```
 
 - Make uploads folder on root
+- Unzip uploads_photos.zip to uploads
 - RUN ``npm start``
 
 ## For Development
